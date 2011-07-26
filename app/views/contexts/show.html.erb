@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @context.Title %>
+</p>
+
+
+<p>
+  <b>Body:</b>
+  <%= @context.Body %>
+</p>
+
+
+<%= link_to 'Edit', edit_context_path(@context) %> |
+<%= link_to 'Back', contexts_path %>

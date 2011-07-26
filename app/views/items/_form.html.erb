@@ -1,0 +1,79 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Title %><br />
+    <%= f.text_field :Title %>
+  </div>
+  <div class="field">
+    <%= f.label :Reference_Type %><br />
+    <%= f.text_field :Reference_Type %>
+  </div>
+  <div class="field">
+    <%= f.label :Reference_Address %><br />
+    <%= f.text_field :Reference_Address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Reference_Chapter %><br />
+    <%= f.text_field :Reference_Chapter %>
+  </div>
+  <div class="field">
+    <%= f.label :Reference_PageNumber%><br />
+    <%= f.text_field :Reference_PageNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :Body %><br />
+    <%= f.text_area  :Body %>
+  </div>
+  <div class="field">
+    <%= f.label :GeoTag %><br />
+    <%= f.text_field :GeoTag %>
+  </div>
+  <div class="field">
+    <%= f.label :TypeId %><br />
+    <%= f.text_field :TypeId %>
+  </div>
+  <div class="field">
+    <%= f.label :People %><br />
+    <%= f.text_field :People %>
+  </div>
+  <div class="field">
+    <%= f.label :ProjectId %><br />
+    <%= f.text_field :ProjectId %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<ul class="checkbox-list">
+
+  <% @terms.each do |term| -%>
+      <li><%= check_box_tag "item[term_ids][]", term.id, item_has_term?(term) -%> <%= term.Title -%></li>
+
+     <% end -%>
+</ul>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

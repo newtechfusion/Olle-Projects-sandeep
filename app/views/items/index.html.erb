@@ -1,0 +1,41 @@
+<h1>Listing Items</h1>
+
+<table>
+  <tr>
+    <th>Title |</th>
+    <th>Reference_Type |</th>
+    <th>Reference_Address |</th>
+    <th>Reference_Chapter |</th>
+    <th>Reference_PageNumber |</th>
+    <th>Body |</th>
+    <th>GeoTag |</th>
+    <th>TypeId |</th>
+    <th>People |</th>
+    <th>ProjectId </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.Title %></td>
+    <td><%= item.Reference_Type %></td>
+    <td><%= item.Reference_Address %></td>
+    <td><%= item.Reference_Chapter %></td>
+    <td><%= item.Reference_PageNumber %></td>
+    <td><%= item.Body %></td>
+    <td><%= item.GeoTag %></td>
+    <td><%= item.TypeId %></td>
+    <td><%= item.People %></td>
+    <td><%= item.ProjectId %></td>
+    <td><%= link_to 'Show', item %></td>
+    <td><%= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Item', new_item_path ,:style => "text-decoration:none;"%>

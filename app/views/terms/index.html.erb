@@ -1,0 +1,27 @@
+<h1>Listing Terms</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>context</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @terms.each do |term| %>
+  <tr>
+    <td><%= term.Title %></td>
+    <td><%= term.Body %></td>
+    <td><%= term.context %></td>
+    <td><%= link_to 'Show', term %></td>
+    <td><%= link_to 'Edit', edit_term_path(term) %></td>
+    <td><%= link_to 'Destroy', term, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Term', new_term_path ,:style => "text-decoration:none;"%>

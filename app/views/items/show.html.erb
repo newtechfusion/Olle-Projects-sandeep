@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @item.Title %>
+</p>
+
+<p>
+  <b>Reference_Type:</b>
+  <%= @item.Reference_Type %>
+</p>
+
+<p>
+  <b>Reference_Address:</b>
+  <%= @item.Reference_Address %>
+</p>
+<p>
+  <b>Reference_Chapter:</b>
+  <%= @item.Reference_Chapter %>
+</p>
+
+<p>
+  <b>Reference_PageNumber:</b>
+  <%= @item.Reference_PageNumber %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @item.Body %>
+</p>
+<p>
+  <b>GeoTag:</b>
+  <%= @item.GeoTag %>
+</p>
+
+<p>
+  <b>TypeId:</b>
+  <%= @item.TypeId %>
+</p>
+
+<p>
+  <b>People:</b>
+  <%= @item.People %>
+</p>
+<p>
+  <b>ProjectId:</b>
+  <%= @item.ProjectId %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
