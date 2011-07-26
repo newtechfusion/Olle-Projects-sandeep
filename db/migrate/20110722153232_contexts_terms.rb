@@ -2,8 +2,8 @@ class ContextsTerms < ActiveRecord::Migration
   def self.up
 
        create_table :contexts_terms , :id => false, :force => true do |t|
-          t.integer "contexts_id"
-          t.integer "terms_id"
+          t.integer "context_id"
+          t.integer "term_id"
         end
   end
 
