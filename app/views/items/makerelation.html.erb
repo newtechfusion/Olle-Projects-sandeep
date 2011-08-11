@@ -1,4 +1,9 @@
-<h1>Listing Items</h1>
+<table>
+<tr>
+       <td><h1>Item to relate is :</h2></td>
+        <td><h2> <%= @item.Title  %><h2> </td>
+</tr>
+</table>
 
 <table>
   <tr>
@@ -17,7 +22,8 @@
     <th></th>
   </tr>
 
-<% @items.each do |item| %>
+
+<% @itemlistnew.each do |item| %>
   <tr>
     <td><%= item.Title %></td>
     <td><%= item.Reference_Type %></td>
@@ -29,18 +35,10 @@
     <td><%= item.TypeId %></td>
     <td><%= item.People %></td>
     <td><%= item.ProjectId %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
-    <td><%=  link_to "Make_relation", :controller => "items", :action => "makerelation", :id => item %></td>
+    <td><%#= link_to "Relate" %></td>
 
-
-
-
+  <%#= check_box_tag "item[term_ids][]", term.id, item_has_term?(term) -%>
+ <td> <%=  button_to "Make_relation_new" , params.merge(:child => item ) , :disabled => button_disable?(item) %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Item', new_item_path ,:style => "text-decoration:none;"%>

@@ -65,7 +65,7 @@
 
 <ul class="checkbox-list">
 
-  <% @terms.each do |term| -%>
+    <% @terms.each do |term| -%>
       <li><%= check_box_tag "item[term_ids][]", term.id, item_has_term?(term) -%> <%= term.Title -%></li>
 
      <% end -%>

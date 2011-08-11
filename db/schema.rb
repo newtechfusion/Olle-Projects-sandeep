@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722153232) do
+ActiveRecord::Schema.define(:version => 20110811052600) do
 
   create_table "contexts", :force => true do |t|
     t.text     "Title"
@@ -20,8 +20,13 @@ ActiveRecord::Schema.define(:version => 20110722153232) do
   end
 
   create_table "contexts_terms", :id => false, :force => true do |t|
-    t.integer "contexts_id"
-    t.integer "terms_id"
+    t.integer "context_id"
+    t.integer "term_id"
+  end
+
+  create_table "item_links", :force => true do |t|
+    t.integer "parent_item_id"
+    t.integer "child_item_id"
   end
 
   create_table "items", :force => true do |t|
@@ -40,8 +45,8 @@ ActiveRecord::Schema.define(:version => 20110722153232) do
   end
 
   create_table "items_terms", :id => false, :force => true do |t|
-    t.integer "items_id"
-    t.integer "terms_id"
+    t.integer "item_id"
+    t.integer "term_id"
   end
 
   create_table "terms", :force => true do |t|

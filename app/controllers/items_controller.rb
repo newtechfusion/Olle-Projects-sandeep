@@ -81,18 +81,31 @@ class ItemsController < ApplicationController
     end
   end
 
+  def makerelation
+      @item = Item.find(params[:id])
+    
+      @itemlist = Item.all
 
+      @itemlistnew =   @itemlist.select  {|item|  item[:id].to_i != params[:id].to_i }
+        
+    if params[:child]
+#
+       itemlink =  ItemLink.new
+       itemlink.parent_item_id = params[:id].to_i
+       itemlink.child_item_id = params[:child].to_i
 
+       itemlink.save
+      #puts "-------------------------------------#{params.inspect}"
+#               itemnew  =  Item.find(params[:child])
+#               puts "-------------------------------------#{itemnew.child_links}"
+    end
 
+  end
 
-
-
-
-
-
-
-
-
+# def makerelationnew
+#
+#   puts "-------------------------------------#{params.inspect}"
+# end
 
 
 end
